@@ -6,7 +6,6 @@ permalink: /about/
 
 <!-- Replace this section with your own bio. Keep it to a few short paragraphs. -->
 
-# About Me
 I am an AI Scientist working at the intersection of AI and Rendering. My work spans the research and production aspects of neural rendering.
 
 My day job is with Sports Tech, Electronic Arts.
