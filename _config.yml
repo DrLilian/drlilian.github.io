@@ -1,0 +1,32 @@
+# --- Site settings -----------------------------------------------------------
+# Live at https://drlilian.github.io once the repo DrLilian.github.io is set up.
+title: Lilian Bialokozowicz
+tagline: ""
+description: >-
+  Musings about anything and everything.
+author: Lilian Bialokozowicz
+
+# Your live site URL (GitHub serves user pages in lowercase).
+url: "https://drlilian.github.io"
+baseurl: ""   # keep empty for a user site
+
+# Optional links shown in the footer. Fill in or delete any you don't want.
+email: ""            # e.g. you@example.com  (leave "" to hide)
+github_username: DrLilian
+linkedin_username: ""   # the part after linkedin.com/in/  (leave "" to hide)
+scholar_url: ""         # Google Scholar / ORCID / researchgate link (leave "" to hide)
+
+# --- Build settings ----------------------------------------------------------
+markdown: kramdown
+permalink: /writing/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-seo-tag     # adds SEO/meta tags
+  - jekyll-sitemap     # generates sitemap.xml
+
+# Files Jekyll should not copy into the built site
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
