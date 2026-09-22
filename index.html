@@ -4,17 +4,23 @@ layout: default
 <section class="intro">
   <h1 class="intro-name">Hello World!</h1>
   <p class="intro-bio">
-    Welcome to my world! Here you can find out more about
-    <a href="{{ '/tags/neural-rendering/' | relative_url }}">research in Neural Rendering</a>,
-    <a href="{{ '/tags/career/' | relative_url }}">my musings about corporate life</a>,
+    Welcome to Lilian's website! Here you can find out more about
+    <a href="{{ '/tags/neural-rendering/' | relative_url }}">my research in Neural Rendering</a>,
+    <a href="{{ '/tags/career/' | relative_url }}">my musings</a>,
     and <a href="{{ '/about/' | relative_url }}">about me</a>.
   </p>
 </section>
 
-<section class="post-list" aria-label="Latest Posts">
-  <h2 class="section-heading">Latest Posts</h2>
+<section class="post-list" aria-label="Writing">
+  <h2 class="section-heading">What I Thought About...</h2>
 
-  {% for post in site.posts limit: 2 %}
+  {% if paginator.posts %}
+    {% assign posts = paginator.posts %}
+  {% else %}
+    {% assign posts = site.posts %}
+  {% endif %}
+
+  {% for post in posts %}
     <article class="post-preview">
       <h3 class="post-preview-title">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
@@ -29,4 +35,15 @@ layout: default
     </article>
   {% endfor %}
 
+  {% if paginator.total_pages > 1 %}
+    <nav class="pagination" aria-label="Pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>
+      {% endif %}
+      <span class="page-count">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>
+      {% endif %}
+    </nav>
+  {% endif %}
 </section>
