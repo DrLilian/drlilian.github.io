@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: "Corporate Life"
+title: "Musings"
 tag: "career"
 permalink: /tags/career/
 ---
